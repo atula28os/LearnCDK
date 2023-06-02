@@ -4,6 +4,8 @@ from aws_cdk import (
     aws_s3 as _s3
 )
 
+from aws_cdk import CfnOutput
+
 from constructs import Construct
 
 class CdkProj2Stack(Stack):
@@ -18,3 +20,16 @@ class CdkProj2Stack(Stack):
                    versioned=True,
                    encryption=_s3.BucketEncryption.KMS
                    )
+
+        s3_bucket = _s3.Bucket(self,
+                   id="MySecondCDKBucket",
+                   bucket_name='cdk-proj2-stack-2',
+                   versioned=True,
+                   encryption=_s3.BucketEncryption.KMS)
+        
+        s3_output = CfnOutput(self, 
+                              id='stack-2-bucket-output',
+                              value=s3_bucket.bucket_name,
+                              description=f'My Second Bucket using CDK',
+                              export_name="cdk-bucket2"
+                              )
