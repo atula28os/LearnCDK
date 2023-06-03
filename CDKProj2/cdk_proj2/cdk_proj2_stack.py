@@ -8,7 +8,7 @@ from aws_cdk import CfnOutput
 
 from constructs import Construct
 
-class CdkProj2Stack(Stack):
+class CdkProj2Stack2(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -16,14 +16,14 @@ class CdkProj2Stack(Stack):
 
         _s3.Bucket(self, 
                    'MyFirstCDKBucket',
-                   bucket_name='cdk-proj2-stack',
+                   bucket_name='cdk-proj2-stack-0',
                    versioned=True,
                    encryption=_s3.BucketEncryption.KMS
                    )
 
         s3_bucket = _s3.Bucket(self,
                    id="MySecondCDKBucket",
-                   bucket_name='cdk-proj2-stack-2',
+                   bucket_name='cdk-proj2-stack-1',
                    versioned=True,
                    encryption=_s3.BucketEncryption.KMS)
         

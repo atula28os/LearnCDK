@@ -46,6 +46,13 @@
     "@aws-cdk/aws-redshift:columnId": true,
     "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": true,
     "@aws-cdk/aws-ec2:restrictDefaultSecurityGroup": true,
-    "@aws-cdk/aws-apigateway:requestValidatorUniqueId": true
+    "@aws-cdk/aws-apigateway:requestValidatorUniqueId": true,
+    "AWS_ACCOUNT": "997403957483",
+    "AWS_REGION": "us-east-1",
+    "VPC": {
+      "vpc_cidr": "10.83.0.0/20",
+      "cidr_mask": 24,
+      "set_reserve": false
+    }
   }
 }
