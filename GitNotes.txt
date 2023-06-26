@@ -1,0 +1,3 @@
+If you have not committed the deletion, you can simply run git checkout HEAD <filename> to restore the file1.
+If you have committed the deletion but not pushed it to the remote, you can reset your local branch to the previous commit using git reset --hard HEAD~112. This will discard all the changes after that commit, including the deletion.
+If you have committed and pushed the deletion to the remote, you can either revert the commit that deleted the file using git revert --no-commit <commit>23, or checkout the file from an earlier commit using git checkout <commit hash> -- <filename>12. You can use git log -- <filename> or git rev-list -n 1 HEAD -- <filename>4 to find the commit hash of the last commit that had the file or deleted the file.
